@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saksham Sharma - Resume</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      padding: 40px 20px;
+    }
+
+    .resume {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      overflow: hidden;
+      border: 3px solid #3498db;
+      box-shadow: 0 0 0 3px rgba(52,152,219,0.3);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 60% 8%;
+      transform: scale(1.5);
+      transform-origin: center 15%;
+    }
+
+    .header h1 { font-size: 28px; font-weight: 700; }
+    .header h2 { font-size: 14px; font-weight: 400; color: #3498db; margin-top: 5px; }
+
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .contacts span { font-size: 12px; color: #bdc3c7; }
+
+    .body { display: grid; grid-template-columns: 1fr 2fr; }
+
+    .sidebar {
+      background: #ecf0f1;
+      padding: 28px 22px;
+    }
+
+    .sidebar h3 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+      margin-bottom: 12px;
+      margin-top: 22px;
+    }
+
+    .sidebar h3:first-child { margin-top: 0; }
+
+    .skill { margin-bottom: 9px; }
+    .skill span { font-size: 12px; display: block; margin-bottom: 3px; color: #555; }
+    .bar { background: #c0cbd3; border-radius: 4px; height: 5px; }
+    .bar-fill { height: 5px; border-radius: 4px; background: #3498db; }
+
+    .sidebar ul { list-style: none; }
+    .sidebar ul li { font-size: 12px; color: #555; padding: 3px 0; }
+    .sidebar ul li strong { color: #2c3e50; }
+
+    .lang { display: flex; justify-content: space-between; font-size: 12px; color: #555; padding: 3px 0; }
+    .lang span:last-child { color: #3498db; font-weight: 600; }
+
+    .main { padding: 28px 30px; }
+
+    .section { margin-bottom: 24px; }
+
+    .section h3 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+      margin-bottom: 14px;
+    }
+
+    .section p { font-size: 13px; line-height: 1.75; color: #555; }
+
+    .item { margin-bottom: 14px; }
+    .item h4 { font-size: 14px; font-weight: 700; color: #2c3e50; }
+    .item .sub { font-size: 12.5px; color: #3498db; font-weight: 600; }
+    .item .date { font-size: 11px; color: #aaa; margin: 2px 0 5px; }
+    .item ul { padding-left: 16px; }
+    .item ul li { font-size: 12.5px; color: #555; line-height: 1.6; }
+
+    .certs { padding-left: 16px; }
+    .certs li { font-size: 13px; color: #555; line-height: 1.7; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag {
+      background: #ecf0f1;
+      color: #2c3e50;
+      font-size: 11.5px;
+      padding: 4px 11px;
+      border-radius: 20px;
+      border: 1px solid #c0cbd3;
+    }
+
+    .footer {
+      background: #2c3e50;
+      color: #bdc3c7;
+      text-align: center;
+      font-size: 11.5px;
+      padding: 13px;
+    }
+  </style>
+</head>
+<body>
+<div class="resume">
+
+  <div class="header">
+    <div class="avatar">
+      <img src="saksham.jpg" alt="Saksham Sharma" />
+    </div>
+    <div>
+      <h1>Saksham Sharma</h1>
+      <h2>B.Tech CSE Student &nbsp;|&nbsp; Full Stack Developer &nbsp;|&nbsp; AI Enthusiast</h2>
+      <div class="contacts">
+        <span>&#128231; sakshamamitsharma@gmail.com</span>
+        <span>&#127758; saksham-sharma.vercel.app</span>
+        <span>&#128279; linkedin.com/in/saksham-sharma-14sept</span>
+        <span>&#128205; Pune, Maharashtra, India</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <aside class="sidebar">
+
+      <h3>Technical Skills</h3>
+      <div class="skill"><span>HTML5 / CSS3</span><div class="bar"><div class="bar-fill" style="width:95%"></div></div></div>
+      <div class="skill"><span>JavaScript</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+      <div class="skill"><span>Python</span><div class="bar"><div class="bar-fill" style="width:82%"></div></div></div>
+      <div class="skill"><span>C / C++ / Java</span><div class="bar"><div class="bar-fill" style="width:78%"></div></div></div>
+      <div class="skill"><span>React / Next.js</span><div class="bar"><div class="bar-fill" style="width:75%"></div></div></div>
+      <div class="skill"><span>Node.js / Express</span><div class="bar"><div class="bar-fill" style="width:72%"></div></div></div>
+      <div class="skill"><span>MySQL / MongoDB</span><div class="bar"><div class="bar-fill" style="width:70%"></div></div></div>
+      <div class="skill"><span>Git / GitHub</span><div class="bar"><div class="bar-fill" style="width:88%"></div></div></div>
+      <div class="skill"><span>Figma / UI-UX</span><div class="bar"><div class="bar-fill" style="width:75%"></div></div></div>
+
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>&#10003; Communication</li>
+        <li>&#10003; Leadership</li>
+        <li>&#10003; Teamwork</li>
+        <li>&#10003; Problem Solving</li>
+        <li>&#10003; Time Management</li>
+      </ul>
+
+      <h3>Links</h3>
+      <ul>
+        <li><strong>GitHub:</strong> github.com/sammy-master</li>
+        <li><strong>Portfolio:</strong> saksham-sharma.vercel.app</li>
+        <li><strong>LinkedIn:</strong> saksham-sharma-14sept</li>
+      </ul>
+
+      <h3>Languages</h3>
+      <div class="lang"><span>English</span><span>Fluent</span></div>
+      <div class="lang"><span>Hindi</span><span>Native</span></div>
+
+    </aside>
+
+    <main class="main">
+
+      <div class="section">
+        <h3>About Me</h3>
+        <p>
+          I am a B.Tech CSE student at Pimpri Chinchwad University, Pune, passionate about Web Development,
+          Artificial Intelligence, and building things that actually matter. I enjoy working across the full
+          stack, designing clean UIs, training AI models, and occasionally crafting 3D visuals. My goal is
+          to grow into a Software Engineer who can bridge logic and creativity effortlessly.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>Education</h3>
+
+        <div class="item">
+          <h4>B.Tech - Computer Science Engineering</h4>
+          <div class="sub">Pimpri Chinchwad University (PCU), Pune</div>
+          <div class="date">2024 - Present &nbsp;|&nbsp; CGPA: 8.27 / 10</div>
+        </div>
+
+        <div class="item">
+          <h4>HSC - Class XII, Science (CBSE)</h4>
+          <div class="sub">SB Patil Public School</div>
+          <div class="date">2024 &nbsp;|&nbsp; 73%</div>
+        </div>
+
+        <div class="item">
+          <h4>SSC - Class X (CBSE)</h4>
+          <div class="sub">The Stepping Stone School</div>
+          <div class="date">2022 &nbsp;|&nbsp; 83%</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Projects</h3>
+
+        <div class="item">
+          <h4>Sammy Yurei AI - Desktop AI Assistant</h4>
+          <div class="sub">Personal Project &nbsp;|&nbsp; Electron.js + AI APIs</div>
+          <div class="date">2025 - Present</div>
+          <ul>
+            <li>Desktop AI assistant powered by Gemini and custom LLMs with voice input and vision.</li>
+            <li>Built with Electron.js featuring a fully custom UI and multi-modal support.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h4>AlgoVision - DSA Visualizer</h4>
+          <div class="sub">Personal Project &nbsp;|&nbsp; JavaScript + Canvas API</div>
+          <div class="date">2024</div>
+          <ul>
+            <li>Animates data structures and sorting algorithms interactively in the browser.</li>
+            <li>Makes learning algorithms easier with real-time step-by-step visualization.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h4>Exotica PCMC - Real Estate Website</h4>
+          <div class="sub">Freelance &nbsp;|&nbsp; Next.js + Tailwind CSS</div>
+          <div class="date">2025</div>
+          <ul>
+            <li>Designed and built a responsive real-estate site for a client, deployed on Vercel.</li>
+            <li>Optimized for SEO and fast performance across all devices.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Certifications</h3>
+        <ul class="certs">
+          <li>Python Programming Certificate</li>
+          <li>HTML &amp; CSS Certificate</li>
+          <li>Java Programming Certificate</li>
+          <li>Responsive Web Design Certificate</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Interests &amp; Hobbies</h3>
+        <div class="tags">
+          <span class="tag">Coding</span>
+          <span class="tag">AI / ML</span>
+          <span class="tag">3D Art &amp; Blender</span>
+          <span class="tag">Game Development</span>
+          <span class="tag">Guitar</span>
+          <span class="tag">Video Editing</span>
+          <span class="tag">Travelling</span>
+          <span class="tag">UI / UX Design</span>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div class="footer">
+    References available upon request &nbsp;|&nbsp; Last updated: August 2026
+  </div>
+
+</div>
+</body>
+</html>

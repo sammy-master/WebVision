@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Photo Gallery</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    header {
+        text-align: center;
+        padding: 20px;
+        background: linear-gradient(135deg, #007BFF, #00d4ff);
+        color: white;
+        font-size: 24px;
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .gallery-item {
+        text-align: center;
+        background: #fff;
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    .gallery img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid #eee;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    }
+    .description {
+        font-size: 14px;
+        color: #444;
+        margin-top: 8px;
+        font-weight: 600;
+    }
+    @media (max-width: 600px) {
+        .gallery {
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+<h1>Food Photo Gallery</h1>
+</header>
+<main>
+<div class="gallery">
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Burger"><p class="description">Juicy cheeseburger with fresh toppings</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Pizza"><p class="description">Delicious pepperoni pizza</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281298?auto=format&fit=crop&w=500&q=80" alt="Pasta"><p class="description">Creamy Alfredo pasta</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=500&q=80" alt="Sushi"><p class="description">Assorted sushi platter</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80" alt="Ice Cream"><p class="description">Chocolate ice cream sundae</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80" alt="Salad"><p class="description">Fresh garden salad</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=500&q=80" alt="Steak"><p class="description">Grilled steak with herbs</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80" alt="Tacos"><p class="description">Spicy Mexican tacos</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=500&q=80" alt="Donuts"><p class="description">Glazed and chocolate donuts</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80" alt="Noodles"><p class="description">Hot and spicy ramen</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=500&q=80" alt="Sandwich"><p class="description">Club sandwich with fresh veggies</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=500&q=80" alt="Cupcake"><p class="description">Chocolate and vanilla cupcakes</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=500&q=80" alt="Fries"><p class="description">Crispy golden fries</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=500&q=80" alt="Pancakes"><p class="description">Fluffy pancakes with syrup</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=500&q=80" alt="Curry"><p class="description">Spicy Indian curry</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80" alt="Brownies"><p class="description">Chewy chocolate brownies</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?auto=format&fit=crop&w=500&q=80" alt="Smoothie"><p class="description">Berry smoothie with yogurt</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=500&q=80" alt="Dumplings"><p class="description">Steamed dumplings with sauce</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1562376552-0d160a2f238d?auto=format&fit=crop&w=500&q=80" alt="Waffles"><p class="description">Belgian waffles with fruit</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=500&q=80" alt="Fried Chicken"><p class="description">Crispy fried chicken</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=500&q=80" alt="Muffins"><p class="description">Blueberry muffins</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=500&q=80" alt="Soup"><p class="description">Hot vegetable soup</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=80" alt="Biryani"><p class="description">Fragrant biryani rice</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80" alt="Cakes"><p class="description">Assorted cakes and pastries</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=500&q=80" alt="Milkshake"><p class="description">Chocolate milkshake</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=500&q=80" alt="Hot Dog"><p class="description">Classic American hot dog</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=500&q=80" alt="Cereal"><p class="description">Healthy breakfast cereal</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=80" alt="Cheesecake"><p class="description">Strawberry cheesecake</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=80" alt="Pudding"><p class="description">Chocolate pudding</p></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=500&q=80" alt="Lasagna"><p class="description">Cheesy baked lasagna</p></div>
+</div>
+</main>
+</body>
+</html>

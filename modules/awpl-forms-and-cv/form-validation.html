@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form Validation</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .form-box {
+      background: #fff;
+      padding: 36px 32px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #2c3e50;
+      font-size: 22px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    input:focus, select:focus {
+      border-color: #3498db;
+    }
+
+    input.error, select.error {
+      border-color: #e74c3c;
+    }
+
+    input.success, select.success {
+      border-color: #2ecc71;
+    }
+
+    .msg {
+      font-size: 11.5px;
+      margin-top: 4px;
+      display: none;
+    }
+
+    .msg.error { color: #e74c3c; display: block; }
+    .msg.success { color: #2ecc71; display: block; }
+
+    button {
+      width: 100%;
+      padding: 11px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 6px;
+      transition: background 0.2s;
+    }
+
+    button:hover { background: #2980b9; }
+
+    .success-box {
+      display: none;
+      text-align: center;
+      padding: 16px;
+      background: #eafaf1;
+      border: 1.5px solid #2ecc71;
+      border-radius: 8px;
+      color: #27ae60;
+      font-size: 15px;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-box">
+  <h2>Registration Form</h2>
+
+  <form id="myForm" novalidate>
+
+    <div class="field">
+      <label>Full Name</label>
+      <input type="text" id="name" placeholder="Enter your full name" />
+      <div class="msg" id="nameMsg"></div>
+    </div>
+
+    <div class="field">
+      <label>Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+      <div class="msg" id="emailMsg"></div>
+    </div>
+
+    <div class="field">
+      <label>Phone Number</label>
+      <input type="text" id="phone" placeholder="Enter 10-digit phone number" />
+      <div class="msg" id="phoneMsg"></div>
+    </div>
+
+    <div class="field">
+      <label>Age</label>
+      <input type="number" id="age" placeholder="Enter your age" />
+      <div class="msg" id="ageMsg"></div>
+    </div>
+
+    <div class="field">
+      <label>Gender</label>
+      <select id="gender">
+        <option value="">-- Select Gender --</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <div class="msg" id="genderMsg"></div>
+    </div>
+
+    <div class="field">
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Min 6 characters" />
+      <div class="msg" id="passwordMsg"></div>
+    </div>
+
+    <div class="field">
+      <label>Confirm Password</label>
+      <input type="password" id="confirm" placeholder="Re-enter password" />
+      <div class="msg" id="confirmMsg"></div>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="success-box" id="successBox">
+    &#10003; Form submitted successfully!
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById("myForm");
+
+  function showError(inputId, msgId, message) {
+    const input = document.getElementById(inputId);
+    const msg   = document.getElementById(msgId);
+    input.className = "error";
+    msg.className   = "msg error";
+    msg.textContent = message;
+    return false;
+  }
+
+  function showSuccess(inputId, msgId) {
+    const input = document.getElementById(inputId);
+    const msg   = document.getElementById(msgId);
+    input.className = "success";
+    msg.className   = "msg success";
+    msg.textContent = "Looks good!";
+    return true;
+  }
+
+  function validate() {
+    let valid = true;
+
+    const name     = document.getElementById("name").value.trim();
+    const email    = document.getElementById("email").value.trim();
+    const phone    = document.getElementById("phone").value.trim();
+    const age      = document.getElementById("age").value.trim();
+    const gender   = document.getElementById("gender").value;
+    const password = document.getElementById("password").value;
+    const confirm  = document.getElementById("confirm").value;
+
+    // Name
+    if (name === "") {
+      showError("name", "nameMsg", "Name is required.");
+      valid = false;
+    } else if (name.length < 3) {
+      showError("name", "nameMsg", "Name must be at least 3 characters.");
+      valid = false;
+    } else {
+      showSuccess("name", "nameMsg");
+    }
+
+    // Email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === "") {
+      showError("email", "emailMsg", "Email is required.");
+      valid = false;
+    } else if (!emailPattern.test(email)) {
+      showError("email", "emailMsg", "Enter a valid email address.");
+      valid = false;
+    } else {
+      showSuccess("email", "emailMsg");
+    }
+
+    // Phone
+    const phonePattern = /^[0-9]{10}$/;
+    if (phone === "") {
+      showError("phone", "phoneMsg", "Phone number is required.");
+      valid = false;
+    } else if (!phonePattern.test(phone)) {
+      showError("phone", "phoneMsg", "Enter a valid 10-digit phone number.");
+      valid = false;
+    } else {
+      showSuccess("phone", "phoneMsg");
+    }
+
+    // Age
+    if (age === "") {
+      showError("age", "ageMsg", "Age is required.");
+      valid = false;
+    } else if (age < 1 || age > 120) {
+      showError("age", "ageMsg", "Enter a valid age between 1 and 120.");
+      valid = false;
+    } else {
+      showSuccess("age", "ageMsg");
+    }
+
+    // Gender
+    if (gender === "") {
+      showError("gender", "genderMsg", "Please select a gender.");
+      valid = false;
+    } else {
+      showSuccess("gender", "genderMsg");
+    }
+
+    // Password
+    if (password === "") {
+      showError("password", "passwordMsg", "Password is required.");
+      valid = false;
+    } else if (password.length < 6) {
+      showError("password", "passwordMsg", "Password must be at least 6 characters.");
+      valid = false;
+    } else {
+      showSuccess("password", "passwordMsg");
+    }
+
+    // Confirm Password
+    if (confirm === "") {
+      showError("confirm", "confirmMsg", "Please confirm your password.");
+      valid = false;
+    } else if (confirm !== password) {
+      showError("confirm", "confirmMsg", "Passwords do not match.");
+      valid = false;
+    } else {
+      showSuccess("confirm", "confirmMsg");
+    }
+
+    return valid;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (validate()) {
+      document.getElementById("successBox").style.display = "block";
+      form.reset();
+      document.querySelectorAll("input, select").forEach(el => el.className = "");
+      document.querySelectorAll(".msg").forEach(el => el.className = "msg");
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebVision — Full-Stack Web Engineering & AWP Interactive Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==================== STUDIO TOPBAR ==================== -->
+  <header class="studio-topbar">
+    <div class="brand-wrap">
+      <div class="brand-logo">WV</div>
+      <div class="brand-text">
+        <h1>
+          WebVision
+          <span class="brand-badge">AWP Interactive Studio</span>
+        </h1>
+        <p>Full-Stack Web Engineering, AJAX, Responsive UI &amp; Layout Workbench</p>
+      </div>
+    </div>
+
+    <!-- Category Filter Bar -->
+    <nav class="category-pills" id="categoryPills" aria-label="Module Categories"></nav>
+
+    <div class="topbar-actions">
+      <button class="catalog-btn" id="toggleCatalogBtn" title="Browse All Modules Grid">
+        <span>&#9638;</span>
+        <span>Module Catalog</span>
+      </button>
+      <a class="author-chip" href="https://personal-portfolio-pi-three-59.vercel.app" target="_blank" rel="noopener">
+        <img src="modules/awpl-forms-and-cv/saksham.jpg" alt="Saksham Sharma" />
+        <span>Saksham Sharma</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== STUDIO WORKSPACE ==================== -->
+  <div class="studio-workspace">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="studio-sidebar">
+      <div class="sidebar-search-box">
+        <div class="search-input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="text"
+            id="moduleSearchInput"
+            class="search-input"
+            placeholder="Filter modules, tags, labs..."
+          />
+          <span class="search-shortcut">/</span>
+        </div>
+      </div>
+
+      <div class="sidebar-module-list" id="sidebarModuleList"></div>
+
+      <div class="sidebar-footer">
+        <span id="moduleCountText">Showing 18 of 18 modules</span>
+        <span>v2.5 Studio</span>
+      </div>
+    </aside>
+
+    <!-- MAIN STAGE -->
+    <main class="studio-stage">
+
+      <!-- Module Info Header & Controls -->
+      <section class="module-header-bar">
+        <div class="module-info-left">
+          <div class="module-title-row">
+            <h2 id="activeModuleTitle">Loading...</h2>
+            <span class="module-category-badge" id="activeModuleCategory">Category</span>
+          </div>
+          <p class="module-desc" id="activeModuleDesc"></p>
+          <div class="module-tech-tags" id="activeModuleTags"></div>
+        </div>
+
+        <div class="stage-controls">
+          <!-- Viewport Switcher -->
+          <div class="control-group" title="Responsive Viewport Switcher">
+            <button class="ctrl-btn active" data-viewport="desktop">
+              <span>&#128421;</span> Desktop
+            </button>
+            <button class="ctrl-btn" data-viewport="tablet">
+              <span>&#128241;</span> Tablet
+            </button>
+            <button class="ctrl-btn" data-viewport="mobile">
+              <span>&#128242;</span> Mobile
+            </button>
+          </div>
+
+          <!-- View Mode Toggle -->
+          <div class="control-group" title="Switch between Live Preview and Source Code Inspector">
+            <button class="ctrl-btn active" data-viewmode="preview">
+              <span>&#9654;</span> Live Preview
+            </button>
+            <button class="ctrl-btn" data-viewmode="code">
+              <span>&lt;/&gt;</span> Source Inspector
+            </button>
+          </div>
+
+          <!-- Reload & Open in New Tab -->
+          <button class="action-btn" id="reloadPreviewBtn" title="Reload Live Iframe">
+            &#8635; Reload
+          </button>
+          <a class="action-btn primary" id="openNewTabBtn" href="#" target="_blank" rel="noopener">
+            Open Standalone &#8599;
+          </a>
+        </div>
+      </section>
+
+      <!-- Multi-Page Subpage Switcher Bar -->
+      <div class="subpage-bar" id="subpageBar">
+        <span class="subpage-label">Multi-Page Quick Jump:</span>
+        <div id="subpageBtns" style="display:flex;gap:6px;flex-wrap:wrap;"></div>
+      </div>
+
+      <!-- LIVE INTERACTIVE PREVIEW STAGE -->
+      <div class="preview-viewport-area" id="previewViewportArea">
+        <div class="preview-frame-shell viewport-desktop" id="previewFrameShell">
+          <div class="browser-chrome">
+            <div class="browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-address" id="browserAddress">https://webvision.studio/</div>
+            <div class="browser-dimensions" id="browserDimensions">100% Responsive</div>
+          </div>
+          <iframe id="previewIframe" title="Live Module Preview"></iframe>
+        </div>
+      </div>
+
+      <!-- SOURCE CODE INSPECTOR STAGE -->
+      <div class="code-inspector-area" id="codeInspectorArea">
+        <div class="code-toolbar">
+          <div class="file-tabs" id="fileTabs"></div>
+          <button class="copy-code-btn" id="copyCodeBtn">
+            &#128203; Copy Code
+          </button>
+        </div>
+        <pre class="code-pre-wrap"><code id="codeContent"></code></pre>
+      </div>
+
+      <!-- FULL CATALOG BENTO OVERLAY -->
+      <div class="catalog-overlay" id="catalogOverlay">
+        <div class="catalog-header">
+          <div>
+            <h2>WebVision Complete Module Catalog (18 Modules)</h2>
+            <p style="font-size:13px;color:var(--text-secondary);margin-top:4px;">
+              Select any project, interactive lab, or multi-page website below to launch it in the live workbench.
+            </p>
+          </div>
+          <button class="action-btn" id="closeCatalogBtn">&#10005; Close Catalog</button>
+        </div>
+        <div class="catalog-grid" id="catalogGrid"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
